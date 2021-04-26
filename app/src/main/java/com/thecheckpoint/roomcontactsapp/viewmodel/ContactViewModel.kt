@@ -3,10 +3,11 @@ package com.thecheckpoint.roomcontactsapp.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.thecheckpoint.roomcontactsapp.data.Contact
 import com.thecheckpoint.roomcontactsapp.data.ContactDatabase
-import com.thecheckpoint.roomcontactsapp.data.ContactRepository
+import com.thecheckpoint.roomcontactsapp.model.ContactRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -26,4 +27,5 @@ class ContactViewModel(application: Application) : AndroidViewModel(application)
             repository.addContact(contact)
         }
     }
+
 }

@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -22,6 +23,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -30,6 +32,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+    }
+
 }
 
 dependencies {
@@ -51,6 +57,8 @@ dependencies {
     implementation "androidx.room:room-runtime:2.2.6"
     implementation "androidx.room:room-ktx:2.2.6"
     androidTestImplementation "androidx.room:room-testing:2.2.6"
+    kapt "androidx.room:room-compiler:2.2.6"
+
 
 
     // Lifecycle components
@@ -62,4 +70,6 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.10"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1"
+
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
 }
